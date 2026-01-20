@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Experience | Henry D. Smith</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <b>Henry D. Smith</b>
+        <small>Experience</small>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a class="active" href="experience.html">Experience</a>
+        <a href="mailto:hsmith40@byu.edu">Email</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container content">
+    <h1>Experience</h1>
+    <p>
+      Roles and project work where I’ve developed, tested, and debugged systems that operate on real hardware.
+      The detail pages expand on responsibilities, tools, and outcomes.
+    </p>
+
+    <div class="grid">
+      <div class="card item">
+        <h3>BYU Robotics and Dynamics Lab (RAD Lab) — Research Assistant</h3>
+        <p>ROS-based control software development, live testing, debugging, and controller tuning on physical systems.</p>
+        <div class="meta"><span class="tag">ROS</span><span class="tag">Real-time</span><span class="tag">Controls</span></div>
+        <a class="details" href="experience-rad-lab.html">Details →</a>
+      </div>
+
+      <div class="card item">
+        <h3>BYU CMR Lab — NASA Big Idea Challenge</h3>
+        <p>Supported fabrication, assembly, and testing of a roller mechanism in a research prototyping workflow.</p>
+        <div class="meta"><span class="tag">Prototyping</span><span class="tag">Testing</span><span class="tag">Mechanisms</span></div>
+        <a class="details" href="experience-nasa-big-idea.html">Details →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">© <span id="year"></span> Henry D. Smith</div>
+  </div>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

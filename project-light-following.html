@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Light-Following Robot | Henry D. Smith</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <b>Henry D. Smith</b>
+        <small>Project Details</small>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container content">
+    <h1>Light-Following Autonomous Robot (Embedded C++)</h1>
+    <div class="card">
+      <p>
+        An embedded robotics project focused on control logic, sensor integration, and real-time
+        debugging on a mobile platform.
+      </p>
+
+      <h2>What I built</h2>
+      <ul>
+        <li>Embedded C++ control loop to track a light source using sensor inputs</li>
+        <li>Motor driver and microcontroller I/O integration</li>
+        <li>Testing and calibration workflow to validate behavior and reduce instability</li>
+      </ul>
+
+      <h2>What I learned</h2>
+      <ul>
+        <li>How sensor noise and timing can destabilize behavior if not handled carefully</li>
+        <li>Debugging hardware–software interaction under real constraints</li>
+        <li>How small tuning changes can significantly improve performance</li>
+      </ul>
+
+      <h2>Artifacts</h2>
+      <p>Repo link, wiring diagram, and short demo clip will be added here.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">© <span id="year"></span> Henry D. Smith</div>
+  </div>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
