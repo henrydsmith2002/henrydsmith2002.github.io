@@ -42,7 +42,6 @@ code { color: var(--text); font-size: .9em; }
 .eyebrow { color: var(--accent); font-family: var(--mono); font-size: 11px; line-height: 1.7; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 17px; }
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) 280px; align-items: center; gap: 80px; padding: 70px 0 58px; }
 .hero h1 { margin-bottom: 22px; }
-.hero h1 span { color: var(--accent); }
 .hero-copy > p:not(.eyebrow) { max-width: 620px; }
 .hero-intro { font-size: 20px; color: var(--text); line-height: 1.5; margin-bottom: 14px; }
 .portrait { margin: 0; }
@@ -195,7 +194,6 @@ code { color: var(--text); font-size: .9em; }
   .hero h1 { font-size: 34px; }
   .hero .eyebrow { font-size: 10px; }
   .hero-intro { font-size: 18px; }
-  .hero-copy > p:not(.eyebrow) { font-size: 15px; }
   .now-strip { flex-wrap: wrap; gap: 10px 16px; }
   .now-strip p { flex-basis: 75%; }
   .now-strip a { margin-left: auto; }
