@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Hardware-in-the-loop autonomous raft simulation | Henry Smith
+  </title>
+  <meta content="Connecting a physical raft controller to ShipSim3 for closed-loop testing, with a hydrodynamic model identified from experimental data." name="description"/>
+  <meta content="#101923" name="theme-color"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Henry Smith · Engineering Portfolio" property="og:site_name"/>
+  <meta content="Hardware-in-the-loop autonomous raft simulation | Henry Smith" property="og:title"/>
+  <meta content="Connecting a physical raft controller to ShipSim3 for closed-loop testing, with a hydrodynamic model identified from experimental data." property="og:description"/>
+  <meta content="https://henrydsmith2002.github.io/assets/profile/henry-smith-profile.jpg" property="og:image"/>
+  <meta content="Portrait of Henry Smith" property="og:image:alt"/>
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <header class="nav">
+   <div class="container nav-inner">
+    <a aria-label="Henry Smith, home" class="brand" href="index.html">
+     <span aria-hidden="true" class="monogram">
+      HS
+      <span>
+       .
+      </span>
+     </span>
+     <span>
+      Henry Smith
+      <small>
+       Engineering portfolio
+      </small>
+     </span>
+    </a>
+    <nav aria-label="Main navigation" class="nav-links">
+     <a href="index.html">
+      Home
+     </a>
+     <a class="current-section" href="projects.html">
+      Projects
+     </a>
+     <a href="experience.html">
+      Experience
+     </a>
+     <a href="index.html#contact">
+      Contact
+     </a>
+     <a class="nav-resume" href="assets/documents/henry-smith-resume.pdf" rel="noopener" target="_blank">
+      Resume
+      <span aria-hidden="true">
+       ↗
+      </span>
+      <span class="sr-only">
+       (PDF, opens in new tab)
+      </span>
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main id="main">
+   <div class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+     <a href="index.html">
+      Home
+     </a>
+     <span aria-hidden="true">
+      /
+     </span>
+     <a href="projects.html">
+      Projects
+     </a>
+     <span aria-hidden="true">
+      /
+     </span>
+     <span aria-current="page">
+      Lawrence Livermore National Laboratory
+     </span>
+    </nav>
+    <header class="project-heading">
+     <p class="eyebrow">
+      Lawrence Livermore National Laboratory
+      <span class="date-divider">
+       /
+      </span>
+      Summer 2026
+     </p>
+     <h1>
+      Hardware-in-the-loop autonomous raft simulation
+     </h1>
+     <p class="lead">
+      Connecting a physical raft controller to ShipSim3 for closed-loop testing, with a hydrodynamic model identified from experimental data.
+     </p>
+     <ul aria-label="Technologies" class="tags">
+      <li>
+       Python
+      </li>
+      <li>
+       ShipSim3
+      </li>
+      <li>
+       Hardware-in-the-loop
+      </li>
+      <li>
+       System identification
+      </li>
+      <li>
+       UDP / serial
+      </li>
+     </ul>
+     <div class="btnrow">
+      <a class="btn" href="assets/documents/llnl-hitl-raft-poster.pdf" rel="noopener" target="_blank">
+       View Full LLNL Poster
+       <span aria-hidden="true">
+        ↗
+       </span>
+       <span class="sr-only">
+        (PDF, opens in new tab)
+       </span>
+      </a>
+     </div>
+    </header>
+    <div aria-label="Measured results" class="metrics">
+     <div>
+      <strong>
+       &lt;1 ms
+      </strong>
+      <span>
+       UDP forwarding
+      </span>
+     </div>
+     <div>
+      <strong>
+       21 ms
+      </strong>
+      <span>
+       95th-percentile serial latency
+      </span>
+     </div>
+     <div>
+      <strong>
+       15%
+      </strong>
+      <span>
+       Yaw-rate NRMSE · wet test
+      </span>
+     </div>
+     <div>
+      <strong>
+       22%
+      </strong>
+      <span>
+       Yaw-rate NRMSE · mission
+      </span>
+     </div>
+    </div>
+    <div class="project-layout">
+     <div class="project-prose">
+      <section>
+       <h2>
+        Problem / objective
+       </h2>
+       <p>
+        Testing and tuning raft control algorithms required deploying a raft on water, taking substantial time and resources. The LIDSS group needed a way to test its physical control board in a simulated environment, with communication latency below 50 ms per message.
+       </p>
+      </section>
+      <section>
+       <h2>
+        My contribution
+       </h2>
+       <p>
+        I implemented the hardware-in-the-loop interface between the physical CORE control board and ShipSim3. I also configured the simulator’s hydrodynamics to reproduce raft behavior, using measured wet-test data to identify a damping model.
+       </p>
+      </section>
+      <section>
+       <h2>
+        Technical approach
+       </h2>
+       <h3>
+        A closed loop through real hardware
+       </h3>
+       <p>
+        A Python interface translates and routes navigation information from ShipSim3 to the CORE board, then returns the board’s motor commands to the simulation. GPS data reaches CORE over serial; other communication uses UDP.
+       </p>
+       <p>
+        I used
+        <code>
+         socket
+        </code>
+        and
+        <code>
+         pyserial
+        </code>
+        for communication, a state class for data handling, and
+        <code>
+         threading
+        </code>
+        so sending and receiving could happen simultaneously.
+       </p>
+       <div aria-label="Closed-loop communication architecture" class="architecture">
+        <div>
+         <strong>
+          ShipSim3
+         </strong>
+         <span>
+          Simulated GPS / navigation
+         </span>
+        </div>
+        <p>
+         ↓ UDP
+        </p>
+        <div>
+         <strong>
+          Python interface
+         </strong>
+         <span>
+          Translate · route · manage state
+         </span>
+        </div>
+        <p>
+         ↓ Serial GPS to control board
+        </p>
+        <div>
+         <strong>
+          Physical CORE board
+         </strong>
+         <span>
+          Runs raft controller
+         </span>
+        </div>
+        <p class="return-path">
+         Motor commands → Python → ShipSim3 (UDP)
+         <br/>
+         <span>
+          The simulation updates, closing the loop.
+         </span>
+        </p>
+       </div>
+       <h3>
+        Identifying the raft’s hydrodynamics
+       </h3>
+       <ol>
+        <li>
+         Collected inputs from provided wet-test GPS position, heading, and motor-command records.
+        </li>
+        <li>
+         Smoothed the measured data with a Savitzky–Golay filter.
+        </li>
+        <li>
+         Used a three-degree-of-freedom marine craft model to solve for residual damping forces in surge, sway, and yaw.
+        </li>
+        <li>
+         Fit damping equations with linear least-squares regression and entered the resulting coefficients into ShipSim3.
+        </li>
+       </ol>
+      </section>
+      <section>
+       <h2>
+        Results
+       </h2>
+       <p>
+        UDP forwarding completed in
+        <strong>
+         less than 1 ms
+        </strong>
+        per message. Serial latency had a
+        <strong>
+         95th-percentile value of 21 ms
+        </strong>
+        , meeting the
+        <strong>
+         50 ms (20 Hz)
+        </strong>
+        real-time requirement.
+       </p>
+       <p>
+        Yaw-rate normalized root mean square error (NRMSE) was
+        <strong>
+         15% against wet-test data
+        </strong>
+        and
+        <strong>
+         22% against independent mission data
+        </strong>
+        . Wet-test surge-velocity NRMSE was 23%; yaw-rate accuracy was prioritized.
+       </p>
+       <p>
+        The interface enabled closed-loop controller testing with the physical board, without deploying a raft for each test.
+       </p>
+      </section>
+     </div>
+     <aside class="project-sidebar">
+      <div class="sidebar-card">
+       <p class="eyebrow">
+        PROJECT CONTEXT
+       </p>
+       <h2>
+        Lawrence Livermore National Laboratory
+       </h2>
+       <dl>
+        <dt>
+         Role
+        </dt>
+        <dd>
+         Robotics and Controls Intern
+        </dd>
+        <dt>
+         Group
+        </dt>
+        <dd>
+         Independent Diagnostic Scoring System (LIDSS)
+        </dd>
+        <dt>
+         When
+        </dt>
+        <dd>
+         Summer 2026
+        </dd>
+        <dt>
+         Technologies
+        </dt>
+        <dd>
+         Python, socket, pyserial, threading, UDP, serial communication, ShipSim3
+        </dd>
+        <dt>
+         Methods
+        </dt>
+        <dd>
+         Hardware-in-the-loop simulation, system identification, signal processing, least-squares regression
+        </dd>
+       </dl>
+      </div>
+      <div class="sidebar-card">
+       <h2>
+        Internship poster
+       </h2>
+       <p>
+        Full architecture, modeling methods, and validation plots.
+       </p>
+       <a class="preview-link" href="assets/documents/llnl-hitl-raft-poster.pdf" rel="noopener" target="_blank">
+        <img alt="LLNL internship poster with communication architecture and raft hydrodynamics validation plots" height="1125" loading="lazy" src="assets/images/llnl-poster.webp" width="1500"/>
+        <span class="sr-only">
+         Open LLNL poster PDF in a new tab
+        </span>
+       </a>
+       <a class="btn" href="assets/documents/llnl-hitl-raft-poster.pdf" rel="noopener" target="_blank">
+        View Full LLNL Poster
+        <span aria-hidden="true">
+         ↗
+        </span>
+        <span class="sr-only">
+         (PDF, opens in new tab)
+        </span>
+       </a>
+       <a class="download-link" download="" href="assets/documents/llnl-hitl-raft-poster.pdf">
+        Download poster (PDF) ↓
+       </a>
+      </div>
+     </aside>
+    </div>
+    <div class="back-projects">
+     <a class="details" href="projects.html">
+      ← Back to all projects
+     </a>
+     <a href="experience.html">
+      Research &amp; experience →
+     </a>
+    </div>
+   </div>
+  </main>
+  <footer class="footer">
+   <div class="container footer-inner">
+    <p>
+     Henry Smith
+     <span>
+      Robotics · Controls · Autonomous systems
+     </span>
+    </p>
+    <div>
+     <a href="mailto:hsmith40@byu.edu">
+      Email
+     </a>
+     <a href="https://www.linkedin.com/in/henry-smith-816a72335/">
+      LinkedIn
+     </a>
+     <a href="https://github.com/henrydsmith2002">
+      GitHub
+     </a>
+    </div>
+    <small>
+     © 2026 Henry Smith
+    </small>
+   </div>
+  </footer>
+ </body>
+</html>

@@ -1,61 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Projects | Henry D. Smith</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <b>Henry D. Smith</b>
-        <small>Projects</small>
-      </div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a class="active" href="projects.html">Projects</a>
-        <a href="experience.html">Experience</a>
-        <a href="mailto:hsmith40@byu.edu">Email</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="container content">
-    <h1>Projects</h1>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Engineering Projects | Henry Smith
+  </title>
+  <meta content="Explore Henry Smith’s work in hardware-in-the-loop simulation, ROS multi-robot control, rover autonomy, and embedded robotics." name="description"/>
+  <meta content="#101923" name="theme-color"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Henry Smith · Engineering Portfolio" property="og:site_name"/>
+  <meta content="Engineering Projects | Henry Smith" property="og:title"/>
+  <meta content="Explore Henry Smith’s work in hardware-in-the-loop simulation, ROS multi-robot control, rover autonomy, and embedded robotics." property="og:description"/>
+  <meta content="https://henrydsmith2002.github.io/assets/profile/henry-smith-profile.jpg" property="og:image"/>
+  <meta content="Portrait of Henry Smith" property="og:image:alt"/>
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <header class="nav">
+   <div class="container nav-inner">
+    <a aria-label="Henry Smith, home" class="brand" href="index.html">
+     <span aria-hidden="true" class="monogram">
+      HS
+      <span>
+       .
+      </span>
+     </span>
+     <span>
+      Henry Smith
+      <small>
+       Engineering portfolio
+      </small>
+     </span>
+    </a>
+    <nav aria-label="Main navigation" class="nav-links">
+     <a href="index.html">
+      Home
+     </a>
+     <a aria-current="page" href="projects.html">
+      Projects
+     </a>
+     <a href="experience.html">
+      Experience
+     </a>
+     <a href="index.html#contact">
+      Contact
+     </a>
+     <a class="nav-resume" href="assets/documents/henry-smith-resume.pdf" rel="noopener" target="_blank">
+      Resume
+      <span aria-hidden="true">
+       ↗
+      </span>
+      <span class="sr-only">
+       (PDF, opens in new tab)
+      </span>
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main id="main">
+   <div class="container">
+    <section class="page-heading">
+     <p class="eyebrow">
+      ENGINEERING PORTFOLIO
+     </p>
+     <h1>
+      Projects
+     </h1>
+     <p class="lead">
+      Control software, simulation, and integration—tested against the behavior of physical systems.
+     </p>
+    </section>
+    <section aria-label="Engineering projects" class="section project-list">
+     <div class="project-grid">
+      <article class="card project-card">
+       <div aria-hidden="true" class="card-visual flow-mini">
+        <span>
+         ShipSim3
+         <small>
+          SIMULATION
+         </small>
+        </span>
+        <b>
+         ↔
+        </b>
+        <span>
+         Python
+         <small>
+          INTERFACE
+         </small>
+        </span>
+        <b>
+         ↔
+        </b>
+        <span>
+         CORE
+         <small>
+          HARDWARE
+         </small>
+        </span>
+       </div>
+       <div class="card-body">
+        <p class="eyebrow">
+         01 / SIMULATION &amp; CONTROLS
+        </p>
+        <h2>
+         Hardware-in-the-loop autonomous raft simulation
+        </h2>
+        <p class="project-org">
+         Lawrence Livermore National Laboratory · Summer 2026
+        </p>
+        <p>
+         Connected a physical raft control board to ShipSim3 and identified a hydrodynamic model from measured data.
+        </p>
+        <ul aria-label="Technologies" class="tags">
+         <li>
+          Python
+         </li>
+         <li>
+          Hardware-in-the-loop
+         </li>
+        </ul>
+        <a class="details" href="project-llnl-raft.html">
+         View project
+         <span aria-hidden="true">
+          →
+         </span>
+         <span class="sr-only">
+          : Hardware-in-the-loop autonomous raft simulation
+         </span>
+        </a>
+       </div>
+      </article>
+      <article class="card project-card">
+       <div aria-hidden="true" class="card-visual robot-mini">
+        <span>
+         <i>
+         </i>
+         AKELA
+        </span>
+        <div>
+         Shared task
+         <small>
+          Independent namespaces
+         </small>
+        </div>
+        <span>
+         <i>
+         </i>
+         RAKSHA
+        </span>
+       </div>
+       <div class="card-body">
+        <p class="eyebrow">
+         02 / MULTI-ROBOT SYSTEMS
+        </p>
+        <h2>
+         A shared control stack. Two physical robots.
+        </h2>
+        <p class="project-org">
+         BYU Robotics and Dynamics Lab · Fall 2025
+        </p>
+        <p>
+         Extended a collaborative table-carrying system to a second robot through ROS namespacing, rotational stabilization, and hardware integration.
+        </p>
+        <ul aria-label="Technologies" class="tags">
+         <li>
+          ROS 1
+         </li>
+         <li>
+          Closed-loop control
+         </li>
+        </ul>
+        <a class="details" href="project-rad-ros.html">
+         View project
+         <span aria-hidden="true">
+          →
+         </span>
+         <span class="sr-only">
+          : A shared control stack. Two physical robots.
+         </span>
+        </a>
+       </div>
+      </article>
+      <article class="card project-card">
+       <div class="card-body">
+        <p class="eyebrow">
+         03 / ROVER AUTONOMY
+        </p>
+        <h2>
+         Reliable camera-image retrieval
+        </h2>
+        <p class="project-org">
+         BYU Mars Rover Capstone Team · Winter 2026
+        </p>
+        <p>
+         Redesigned the rover control interface’s image-retrieval workflow to improve camera-image reliability during the autonomy task.
+        </p>
+        <ul aria-label="Technologies" class="tags">
+         <li>
+          Autonomy
+         </li>
+         <li>
+          Software integration
+         </li>
+        </ul>
+        <a class="details" href="project-mars-rover.html">
+         View project
+         <span aria-hidden="true">
+          →
+         </span>
+         <span class="sr-only">
+          : Reliable camera-image retrieval
+         </span>
+        </a>
+       </div>
+      </article>
+      <article class="card project-card">
+       <div class="card-body">
+        <p class="eyebrow">
+         04 / EMBEDDED SYSTEMS
+        </p>
+        <h2>
+         Line-following autonomous robot
+        </h2>
+        <p class="project-org">
+         BYU · ME EN 330
+        </p>
+        <p>
+         Programmed an embedded-C mobile robot to follow a line and avoid obstacles using real-time reflectance and distance feedback.
+        </p>
+        <ul aria-label="Technologies" class="tags">
+         <li>
+          Embedded C
+         </li>
+         <li>
+          Sensors &amp; motor control
+         </li>
+        </ul>
+        <a class="details" href="project-light-following.html">
+         View project
+         <span aria-hidden="true">
+          →
+         </span>
+         <span class="sr-only">
+          : Line-following autonomous robot
+         </span>
+        </a>
+       </div>
+      </article>
+      <article class="card project-card">
+       <div class="card-body">
+        <p class="eyebrow">
+         05 / MECHANICAL PROTOTYPING
+        </p>
+        <h2>
+         NASA BIG Idea Challenge roller mechanism
+        </h2>
+        <p class="project-org">
+         BYU Compliant Mechanisms and Robotics Lab · Summer 2024
+        </p>
+        <p>
+         Supported graduate-led mechanism development through fabrication, assembly, and testing.
+        </p>
+        <ul aria-label="Technologies" class="tags">
+         <li>
+          Fabrication
+         </li>
+         <li>
+          Mechanical prototyping
+         </li>
+        </ul>
+        <a class="details" href="experience.html#cmr">
+         View experience
+         <span aria-hidden="true">
+          →
+         </span>
+         <span class="sr-only">
+          : NASA BIG Idea Challenge roller mechanism
+         </span>
+        </a>
+       </div>
+      </article>
+     </div>
+    </section>
+    <aside class="callout">
+     <p>
+      <strong>
+       Currently in progress: rosVTOL
+      </strong>
+      <br/>
+      A VTOL extension to the ROSflight autopilot ecosystem at BYU’s MAGICC Lab.
+     </p>
+     <a class="details" href="experience.html#magicc">
+      View current research →
+     </a>
+    </aside>
+   </div>
+  </main>
+  <footer class="footer">
+   <div class="container footer-inner">
     <p>
-      These are representative projects aligned with robotics software, controls, and real-time system behavior.
-      Detailed pages focus on architecture, what I built, and what I learned from testing on hardware.
+     Henry Smith
+     <span>
+      Robotics · Controls · Autonomous systems
+     </span>
     </p>
-
-    <div class="grid">
-      <div class="card item">
-        <h3>ROS Mobile Robot Control & Coordination (RAD Lab)</h3>
-        <p>ROS-based control and integration work on physical hardware, with emphasis on stability and debugging.</p>
-        <div class="meta"><span class="tag">ROS</span><span class="tag">Controls</span><span class="tag">Hardware</span></div>
-        <a class="details" href="project-rad-ros.html">Details →</a>
-      </div>
-
-      <div class="card item">
-        <h3>Light-Following Autonomous Robot (Embedded C++)</h3>
-        <p>Embedded control logic + sensor/motor integration validated through testing and calibration.</p>
-        <div class="meta"><span class="tag">Embedded</span><span class="tag">C++</span><span class="tag">Sensors</span></div>
-        <a class="details" href="project-light-follow.html">Details →</a>
-      </div>
-
-      <div class="card item">
-        <h3>BYU Mars Rover Team (ROS2)</h3>
-        <p>Team-based development on a rover software stack, focusing on reliability and system integration.</p>
-        <div class="meta"><span class="tag">ROS2</span><span class="tag">Systems</span><span class="tag">Team</span></div>
-        <a class="details" href="project-mars-rover.html">Details →</a>
-      </div>
+    <div>
+     <a href="mailto:hsmith40@byu.edu">
+      Email
+     </a>
+     <a href="https://www.linkedin.com/in/henry-smith-816a72335/">
+      LinkedIn
+     </a>
+     <a href="https://github.com/henrydsmith2002">
+      GitHub
+     </a>
     </div>
-  </div>
-
-  <div class="footer">
-    <div class="container">© <span id="year"></span> Henry D. Smith</div>
-  </div>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
+    <small>
+     © 2026 Henry Smith
+    </small>
+   </div>
+  </footer>
+ </body>
 </html>

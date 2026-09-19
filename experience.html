@@ -1,54 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Experience | Henry D. Smith</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <b>Henry D. Smith</b>
-        <small>Experience</small>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Research &amp; Engineering Experience | Henry Smith
+  </title>
+  <meta content="Henry Smith’s research and engineering experience at BYU MAGICC Lab, Lawrence Livermore National Laboratory, RAD Lab, and CMR Lab." name="description"/>
+  <meta content="#101923" name="theme-color"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Henry Smith · Engineering Portfolio" property="og:site_name"/>
+  <meta content="Research &amp; Engineering Experience | Henry Smith" property="og:title"/>
+  <meta content="Henry Smith’s research and engineering experience at BYU MAGICC Lab, Lawrence Livermore National Laboratory, RAD Lab, and CMR Lab." property="og:description"/>
+  <meta content="https://henrydsmith2002.github.io/assets/profile/henry-smith-profile.jpg" property="og:image"/>
+  <meta content="Portrait of Henry Smith" property="og:image:alt"/>
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <header class="nav">
+   <div class="container nav-inner">
+    <a aria-label="Henry Smith, home" class="brand" href="index.html">
+     <span aria-hidden="true" class="monogram">
+      HS
+      <span>
+       .
+      </span>
+     </span>
+     <span>
+      Henry Smith
+      <small>
+       Engineering portfolio
+      </small>
+     </span>
+    </a>
+    <nav aria-label="Main navigation" class="nav-links">
+     <a href="index.html">
+      Home
+     </a>
+     <a href="projects.html">
+      Projects
+     </a>
+     <a aria-current="page" href="experience.html">
+      Experience
+     </a>
+     <a href="index.html#contact">
+      Contact
+     </a>
+     <a class="nav-resume" href="assets/documents/henry-smith-resume.pdf" rel="noopener" target="_blank">
+      Resume
+      <span aria-hidden="true">
+       ↗
+      </span>
+      <span class="sr-only">
+       (PDF, opens in new tab)
+      </span>
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main id="main">
+   <div class="container">
+    <section class="page-heading">
+     <p class="eyebrow">
+      RESEARCH &amp; ENGINEERING
+     </p>
+     <h1>
+      Experience
+     </h1>
+     <p class="lead">
+      Building and testing the connections between control software, simulation, and hardware.
+     </p>
+    </section>
+    <div class="timeline">
+     <article class="experience-row" id="magicc">
+      <div class="experience-date">
+       Sept 2026–Present
       </div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a class="active" href="experience.html">Experience</a>
-        <a href="mailto:hsmith40@byu.edu">Email</a>
+      <div>
+       <p class="eyebrow">
+        Research Assistant
+       </p>
+       <h2>
+        BYU MAGICC Lab
+       </h2>
+       <span class="status">
+        Ongoing research
+       </span>
+       <p>
+        Developing
+        <strong>
+         rosVTOL
+        </strong>
+        , a VTOL extension to the ROSflight autopilot ecosystem. My current work integrates fixed-wing and multicopter control architectures for hybrid UAVs, including the transition between flight modes.
+       </p>
+       <p>
+        Working with ROS 2, C++, flight-control software, simulation, and autonomous UAV systems.
+       </p>
+       <ul aria-label="Technologies" class="tags">
+        <li>
+         ROS 2
+        </li>
+        <li>
+         C++
+        </li>
+        <li>
+         Flight control
+        </li>
+       </ul>
       </div>
+     </article>
+     <article class="experience-row" id="llnl">
+      <div class="experience-date">
+       Summer 2026
+      </div>
+      <div>
+       <p class="eyebrow">
+        Robotics and Controls Intern · LIDSS Group
+       </p>
+       <h2>
+        Lawrence Livermore National Laboratory
+       </h2>
+       <p>
+        Built a hardware-in-the-loop interface between an autonomous raft’s physical CORE control board and ShipSim3, enabling closed-loop controller testing without deploying a raft. Designed a multithreaded Python architecture for UDP and serial communication.
+       </p>
+       <p>
+        UDP forwarding took less than 1 ms; 95th-percentile serial latency was 21 ms against a 50 ms requirement. Identified a three-degree-of-freedom damping model using Savitzky–Golay filtering and linear least-squares regression, with yaw-rate NRMSE of 15% against wet-test data and 22% against independent mission data.
+       </p>
+       <a class="details" href="project-llnl-raft.html">
+        View LLNL project
+        <span aria-hidden="true">
+         →
+        </span>
+       </a>
+       <ul aria-label="Technologies" class="tags">
+        <li>
+         Python
+        </li>
+        <li>
+         Simulation
+        </li>
+        <li>
+         System identification
+        </li>
+       </ul>
+      </div>
+     </article>
+     <article class="experience-row" id="rad">
+      <div class="experience-date">
+       Fall 2025
+      </div>
+      <div>
+       <p class="eyebrow">
+        Research Assistant
+       </p>
+       <h2>
+        BYU Robotics and Dynamics Lab
+       </h2>
+       <p>
+        Deployed an existing ROS 1 control stack on a second mobile robot for human–robot collaborative table carrying. Adapted configuration, calibration, and launch files, isolated robot namespaces, and implemented rotational stabilization.
+       </p>
+       <p>
+        Tested closed-loop behavior with external position feedback and diagnosed integration issues across sensing, control, and hardware nodes.
+       </p>
+       <a class="details" href="project-rad-ros.html">
+        View dual-robot project
+        <span aria-hidden="true">
+         →
+        </span>
+       </a>
+       <ul aria-label="Technologies" class="tags">
+        <li>
+         ROS 1
+        </li>
+        <li>
+         Multi-robot systems
+        </li>
+        <li>
+         Hardware integration
+        </li>
+       </ul>
+      </div>
+     </article>
+     <article class="experience-row" id="cmr">
+      <div class="experience-date">
+       Summer 2024
+      </div>
+      <div>
+       <p class="eyebrow">
+        Research Assistant
+       </p>
+       <h2>
+        BYU Compliant Mechanisms and Robotics Lab
+       </h2>
+       <p>
+        Supported a graduate-led design effort for the
+        <strong>
+         NASA BIG Idea Challenge
+        </strong>
+        , assisting with fabrication, assembly, and testing of a roller mechanism.
+       </p>
+       <ul aria-label="Technologies" class="tags">
+        <li>
+         Fabrication
+        </li>
+        <li>
+         Assembly &amp; testing
+        </li>
+        <li>
+         Mechanical prototyping
+        </li>
+       </ul>
+      </div>
+     </article>
     </div>
-  </div>
-
-  <div class="container content">
-    <h1>Experience</h1>
+    <section class="section">
+     <h2>
+      Additional project work
+     </h2>
+     <p>
+      Software and Autonomy Volunteer with the
+      <a href="project-mars-rover.html">
+       BYU Mars Rover Capstone Team
+      </a>
+      (Winter 2026), and an
+      <a href="project-light-following.html">
+       embedded-C line-following robot
+      </a>
+      for ME EN 330.
+     </p>
+    </section>
+    <section class="section education" id="education">
+     <div class="section-header">
+      <div>
+       <p class="eyebrow">
+        FOUNDATION
+       </p>
+       <h2>
+        Education
+       </h2>
+      </div>
+      <span>
+       Fall 2023–Present
+      </span>
+     </div>
+     <div class="education-grid">
+      <div>
+       <h3>
+        Brigham Young University
+       </h3>
+       <p class="lead-small">
+        B.S. in Mechanical Engineering
+       </p>
+       <p>
+        Minors in Computer Science and Mathematics
+        <br/>
+        Expected graduation: April 2028
+       </p>
+       <div class="education-facts">
+        <span>
+         <b>
+          4.0
+         </b>
+         GPA
+        </span>
+        <span>
+         Russell M. Nelson
+         <br/>
+         <b>
+          Scholarship recipient
+         </b>
+        </span>
+       </div>
+      </div>
+      <div>
+       <h3 class="small-heading">
+        Relevant coursework
+       </h3>
+       <ul class="coursework">
+        <li>
+         System Dynamics
+        </li>
+        <li>
+         Mechatronics
+        </li>
+        <li>
+         Data Structures
+        </li>
+        <li>
+         Numerical Methods
+        </li>
+        <li>
+         Engineering Design / CAD
+        </li>
+       </ul>
+      </div>
+     </div>
+    </section>
+   </div>
+  </main>
+  <footer class="footer">
+   <div class="container footer-inner">
     <p>
-      Roles and project work where I’ve developed, tested, and debugged systems that operate on real hardware.
-      The detail pages expand on responsibilities, tools, and outcomes.
+     Henry Smith
+     <span>
+      Robotics · Controls · Autonomous systems
+     </span>
     </p>
-
-    <div class="grid">
-      <div class="card item">
-        <h3>BYU Robotics and Dynamics Lab (RAD Lab) — Research Assistant</h3>
-        <p>ROS-based control software development, live testing, debugging, and controller tuning on physical systems.</p>
-        <div class="meta"><span class="tag">ROS</span><span class="tag">Real-time</span><span class="tag">Controls</span></div>
-        <a class="details" href="experience-rad-lab.html">Details →</a>
-      </div>
-
-      <div class="card item">
-        <h3>BYU CMR Lab — NASA Big Idea Challenge</h3>
-        <p>Supported fabrication, assembly, and testing of a roller mechanism in a research prototyping workflow.</p>
-        <div class="meta"><span class="tag">Prototyping</span><span class="tag">Testing</span><span class="tag">Mechanisms</span></div>
-        <a class="details" href="experience-nasa-big-idea.html">Details →</a>
-      </div>
+    <div>
+     <a href="mailto:hsmith40@byu.edu">
+      Email
+     </a>
+     <a href="https://www.linkedin.com/in/henry-smith-816a72335/">
+      LinkedIn
+     </a>
+     <a href="https://github.com/henrydsmith2002">
+      GitHub
+     </a>
     </div>
-  </div>
-
-  <div class="footer">
-    <div class="container">© <span id="year"></span> Henry D. Smith</div>
-  </div>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
+    <small>
+     © 2026 Henry Smith
+    </small>
+   </div>
+  </footer>
+ </body>
 </html>
